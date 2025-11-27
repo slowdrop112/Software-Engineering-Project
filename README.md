@@ -3,9 +3,9 @@
 Acesta este repository-ul oficial pentru proiectul nostru la disciplina **Ingineria Programării**.
 
 ## 👥 Membrii Echipei
-* **[Grigore Cristian]** - Database Architect & Azure Admin
-* **[Dobrin Eduard]** - [Rolul lui, Backend Developer]
-* **[Chera Alexandru-Gabriel]** - [Rolul lui, Frontend Developer]
+* **Grigore Cristian** - Database Architect & Azure Admin
+* **Dobrin Eduard** - Backend Developer
+* **Chera Alexandru-Gabriel** - Frontend Developer
 
 ## 🛠 Tehnologii Folosite
 * **Limbaj:** C# / .NET
