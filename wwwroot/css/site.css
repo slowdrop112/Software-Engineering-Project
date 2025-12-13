@@ -1,0 +1,82 @@
+/* Stiluri pentru Paginile de Autentificare/Înregistrare (Login & Register) - Design Modern Card */
+
+/* 1. Containerul principal - centreaz? cardul pe pagin? */
+.login-container {
+    display: flex;
+    justify-content: center; /* Centreaz? orizontal */
+    align-items: center; /* Centreaz? vertical */
+    /* 100vh asigur? c? formularul ocup? toat? în?l?imea vizibil? (viewport) */
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; /* Fundal subtil, deschis */
+}
+
+/* 2. Cardul de Login/Înregistrare */
+.login-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px; /* Margini rotunjite moderne */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Umbr? moale ?i subtil? */
+    width: 100%;
+    /* L??imea maxim? va fi de 400px (pentru Login) sau 450px (dac? a?i setat în Register.cshtml) */
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+    /* Efect vizual la hover (op?ional) */
+    .login-card:hover {
+        transform: translateY(-5px);
+    }
+
+/* 3. Titlul principal al formularului */
+.login-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* 4. Subtitlul/Descrierea */
+.login-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* 5. Butonul principal (Înregistrare/Autentificare) */
+.login-button {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-color: #007bff; /* Culoarea primar? Bootstrap */
+    border-color: #007bff;
+    transition: background-color 0.2s;
+}
+
+    .login-button:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+/* 6. Stil pentru link-uri (ex: "A?i uitat parola?") */
+.login-card a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+    .login-card a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+/* 7. Ajustare pentru câmpurile Floating Input (asigur? vizibilitatea etichetei la focus) */
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-select ~ label {
+    color: #007bff;
+    opacity: 0.85;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}

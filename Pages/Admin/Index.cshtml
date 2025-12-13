@@ -1,0 +1,62 @@
+@page
+@model Uniflow.Pages.Admin.IndexModel
+@{
+    ViewData["Title"] = "Administrare Utilizatori";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="text-primary"><i class="fa-solid fa-users-gear"></i> Administrare Utilizatori</h1>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-light">
+            <h5 class="mb-0">Listă Utilizatori Înregistrați</h5>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-hover table-striped mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Email</th>
+                        <th>Roluri</th>
+                        <th class="text-end">Acțiuni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model.Users)
+                    {
+                        <tr>
+                            <td>
+                                <span class="fw-bold">@user.Email</span>
+                            </td>
+                            <td>
+                                @if (user.Roles.Contains("Admin"))
+                                {
+                                    <span class="badge bg-danger">Admin</span>
+                                }
+                                else if (user.Roles.Contains("Profesor"))
+                                {
+                                    <span class="badge bg-success">Profesor</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-primary">Student</span>
+                                }
+                            </td>
+                            <td class="text-end">
+                                <button class="btn btn-sm btn-outline-secondary" title="Editează">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" title="Șterge">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

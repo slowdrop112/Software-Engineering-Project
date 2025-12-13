@@ -1,0 +1,76 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Autentificare";
+}
+
+<div class="login-container">
+    <div class="login-card">
+        <h1 class="login-title">Bine ați venit!</h1>
+        <p class="login-subtitle">Vă rugăm să vă autentificați pentru a continua.</p>
+
+        <section>
+            <form id="account" method="post">
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="nume@exemplu.com" />
+                    <label asp-for="Input.Email" class="form-label">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Parolă" />
+                    <label asp-for="Input.Password" class="form-label">Parolă</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+
+                <div class="checkbox mb-3">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </div>
+
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary login-button">Autentificare</button>
+                </div>
+
+                <div class="mt-3 text-center">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Ați uitat parola?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Nu aveți un cont? Înregistrați-vă.</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Retrimiteți confirmarea prin email</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+
+        @* <section class="mt-4">
+        @{
+        if ((Model.ExternalLogins?.Count ?? 0) != 0)
+        {
+        <h3 class="login-subtitle">Sau folosiți un alt serviciu:</h3>
+        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+        <div>
+        @foreach (var provider in Model.ExternalLogins!)
+        {
+        <button type="submit" class="btn btn-secondary w-100 mb-2" name="provider" value="@provider.Name" title="Autentificare cu @provider.DisplayName">@provider.DisplayName</button>
+        }
+        </div>
+        </form>
+        }
+        }
+        </section> *@
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
